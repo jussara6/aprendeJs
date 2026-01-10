@@ -6,6 +6,7 @@ function adicionarTarefa() {
 
   if (!tarefa) {
     mensagemEl.textContent = "Digite uma tarefa antes de adicionar.";
+    mensagemEl.style.color = "red"; //muda a cor da mensagem para vermelho
     return;
   }
     
@@ -15,6 +16,7 @@ function adicionarTarefa() {
     listaTarefas.appendChild(novaTarefa)
 
     mensagemEl.textContent= "Tarefa adicionada com sucesso" //adiciona o novo elemento li na ul
+    mensagemEl.style.color = "green"; //muda a cor da mensagem para verde
     inputTarefa.value= "" 
     inputTarefa.focus() //foca o cursor no input após adicionar uma tarefa
 }
