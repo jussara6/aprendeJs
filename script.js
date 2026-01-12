@@ -73,3 +73,10 @@ function editarTarefa(i){
 
   }
 }
+function limparLista(){
+  tarefas.length=0
+  renderizarTarefas()
+  mensagem.textContent="Lista limpa com sucesso!"
+  mensagem.style.color="green"
+
+}
