@@ -43,9 +43,33 @@ function renderizarTarefas(){
     let botaoRemover= document.createElement("button") //cria um novo elemento botão
     botaoRemover.className="remover" //inclui na classe de remover
     botaoRemover.textContent="Remover" //adiciona o texto "Remover" no botão
+    botaoRemover.onclick= ()=> removerTarefa(i)
+
+    let botaoEditar=document.createElement("button")
+    botaoEditar.className="editar"
+    botaoEditar.textContent="Editar"
+    botaoEditar.onclick= () => editarTarefa(i)
+
+
+
+
     novaTarefa.appendChild(botaoRemover)
+    novaTarefa.appendChild(botaoEditar)
     listaTarefas.appendChild(novaTarefa)//faz a nova tarefa se tornar filha da lista de tarefas
   }
 
 
+}
+function removerTarefa (i){
+  tarefas.splice (i,1)
+  renderizarTarefas()
+}
+
+function editarTarefa(i){
+  let tarefaEditada= prompt("Edite a tarefa:")
+  if(tarefaEditada.trim() !==""){
+    tarefas[i]=tarefaEditada
+    renderizarTarefas()
+
+  }
 }
