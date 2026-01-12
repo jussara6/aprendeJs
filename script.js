@@ -37,9 +37,13 @@ function renderizarTarefas(){
   listaTarefas.innerHTML=""
 
   for (let i=0; i<tarefas.length;i++){
-
     let novaTarefa = document.createElement("li") //cria um novo elemento li (lista não ordenada)
     novaTarefa.textContent=tarefas[i] //adiciona o valor da variavel tarefa no novo elemento li  
+    
+    let botaoRemover= document.createElement("button") //cria um novo elemento botão
+    botaoRemover.className="remover" //inclui na classe de remover
+    botaoRemover.textContent="Remover" //adiciona o texto "Remover" no botão
+    novaTarefa.appendChild(botaoRemover)
     listaTarefas.appendChild(novaTarefa)//faz a nova tarefa se tornar filha da lista de tarefas
   }
 
